@@ -14,7 +14,7 @@ Full author list: Chantelle Burton<sup>[1](contribution)</sup> and Seppe Lampe<s
 
 Article under review.
 
-This repository contains 5 notebooks (under Visuals) that contain the entire workflow of our analysis.
+This repository contains [5 notebooks](https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change/tree/5feeb0b8eb55d232c65a01a4d8803d4cb00d705d/Scripts) that contain the entire workflow of our analysis.
 
 __Important message!__<br>
 Currently, not all the datasets used in this analysis are openly available yet. All of them will be openly available in the coming months.
