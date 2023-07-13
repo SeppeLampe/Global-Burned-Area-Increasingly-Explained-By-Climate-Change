@@ -2,7 +2,7 @@
 
 Python code accompanying ISIMIP3a burned area attribution.
 
-(updated June 2023)
+(updated July 2023)
 
 Chantelle Burton & Seppe Lampe
 
