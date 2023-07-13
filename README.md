@@ -20,9 +20,9 @@ This repository contains [5 notebooks](https://github.com/SeppeLampe/Global-Burn
 
 __Important message!__<br>
 Currently, not all the datasets used in this analysis are openly available yet. All of them will be openly available in the coming months.
-We make use of two observational burned area datasets, FireCCI5.1 (open) and GFED5 (under review, open after publication).
+We make use of two observational burned area datasets, [FireCCI5.1](https://data.ceda.ac.uk/neodc/esacci/fire/data/burned_area/MODIS/grid/v5.1) (open) and [GFED5](https://doi.org/10.5194/essd-2023-182) (under review, open after publication).
 We also use simulations by seven models of the ISIMIP framework. These are all open. 
-However, from these seven models, two are currently available from the ISIMIP data repository. The other five will become available during the coming weeks/months.
+However, from these seven models, two are currently available from the [ISIMIP data repository](https://data.isimip.org/). The other five will become available during the coming weeks/months.
 
 ### How to run this code
 
