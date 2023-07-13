@@ -33,8 +33,8 @@ However, from these seven models, two are currently available from the [ISIMIP d
 2. Download the data in the corresponding folders
 
    Download the [FireCCI5.1](https://data.ceda.ac.uk/neodc/esacci/fire/data/burned_area/MODIS/grid/v5.1) filestructure to [Data\Observations\FireCCI5.1](Data\Observations\FireCCI5.1).<br>
-   Download the [GFED5]([https://doi.org/10.5194/essd-2023-182](https://doi.org/10.5281/zenodo.7668424)) filestructure to [Data\Observations\GFED5](Data\Observations\GFED5).<br>
-   Download the ISIMIP Fire Sector OutputData to [Data\ISIMIP\OutputData\fire](Data\ISIMIP\OutputData\fire) (__Not fully available yet__).<br>
+   Download the [GFED5](https://doi.org/10.5281/zenodo.7668424) filestructure to [Data\Observations\GFED5](Data\Observations\GFED5).<br>
+   Download the [ISIMIP Fire Sector](https://data.isimip.org/) OutputData to [Data\ISIMIP\OutputData\fire](Data\ISIMIP\OutputData\fire) (__Not fully available yet__).<br>
 
 4. Create a new conda environment
    ```
