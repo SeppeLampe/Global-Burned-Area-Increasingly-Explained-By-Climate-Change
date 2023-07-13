@@ -1,1 +1,1 @@
-Downlaod the ISIMIP vegetationcarbon data here.
+Download the ISIMIP vegetation carbon data here.
