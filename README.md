@@ -1,12 +1,16 @@
 # Global Burned Area Increasingly Explained By Climate Change
 
-Python code accompanying ISIMIP3a burned area attribution.
+<img align="right" src="https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change/assets/56223069/38ac7a74-f439-4c70-bb12-a4dfa1798a18" width="200" />
 
-(updated July 2023)
+Python code accompanying ISIMIP3a burned area attribution. (updated July 2023)
 
 Chantelle Burton & Seppe Lampe
 
-Full author list: Chantelle Burton and Seppe Lampe, Douglas I. Kelley, Wim Thiery, Stijn Hantson, Nikos Christidis, Lukas Gudmundsson, Matthew Forrest, Eleanor Burke, Jinfeng Chang, Huilin Huang, Akihiko Ito, Sian Kou-Giesbrecht, Gitta Lasslop, Wei Li, Lars Nieradzik, Fang Li, Yang Chen, Jim Randerson, Christopher P.O. Reyer & Matthias Mengel
+Full author list: Chantelle Burton<sup>[1](contribution)</sup> and Seppe Lampe<sup>[1](contribution)</sup> <sup>[2](contact)</sup>, Douglas I. Kelley, Wim Thiery, Stijn Hantson, Nikos Christidis, Lukas Gudmundsson, Matthew Forrest, Eleanor Burke, Jinfeng Chang, Huilin Huang, Akihiko Ito, Sian Kou-Giesbrecht, Gitta Lasslop, Wei Li, Lars Nieradzik, Fang Li, Yang Chen, Jim Randerson, Christopher P.O. Reyer & Matthias Mengel
+
+<a name="contribution"><sup>1</sup></a> Equal contribution
+
+<a name="contact"><sup>2</sup></a> Corresponding authour: seppe.lampe@vub.be
 
 Article under review.
 
