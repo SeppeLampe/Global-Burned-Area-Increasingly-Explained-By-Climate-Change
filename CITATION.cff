@@ -1,10 +1,69 @@
-cff-version: 1.1.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Joe
-    given-names: Johnson
-    orcid: https://orcid.org/0000-0000-0000-0000
-title: SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change: Submission
+  - family-names: Lampe
+    given-names: Seppe
+    orcid: https://orcid.org/0000-0002-7907-4496
+  - family-names: Burton
+    given-names: Chantelle
+    orcid: https://orcid.org/0000-0003-0201-5727
+  - family-names: Kelley
+    given-names: Douglas
+    orcid: https://orcid.org/0000-0003-1413-4969
+  - family-names: Thiery
+    given-names: Wim
+    orcid: https://orcid.org/0000-0002-5183-6145
+  - family-names: Hantson
+    given-names: Stijn
+    orcid: https://orcid.org/0000-0003-4607-9204
+  - family-names: Christidis
+    given-names: Nikos
+  - family-names: Gudmundsson
+    given-names: Lukas
+    orcid: https://orcid.org/0000-0003-3539-8621
+  - family-names: Forrest
+    given-names: Matthew
+    orcid: https://orcid.org/0000-0003-1858-3489
+  - family-names: Burke
+    given-names: Eleanor
+    orcid: https://orcid.org/0000-0002-2158-141X
+  - family-names: Chang
+    given-names: Jinfeng
+    orcid: https://orcid.org/0000-0003-4463-7778
+  - family-names: Huang
+    given-names: Huilin
+    orcid: https://orcid.org/0000-0002-7328-6738
+  - family-names: Ito
+    given-names: Akihiko
+    orcid: https://orcid.org/0000-0001-5265-0791
+  - family-names: Kou-Giesbrecht
+    given-names: Sian
+    orcid: https://orcid.org/0000-0002-4086-0561
+  - family-names: Lasslop
+    given-names: Gitta
+    orcid: https://orcid.org/0000-0001-9939-1459
+  - family-names: Li
+    given-names: Wei
+  - family-names: Nieradzik
+    given-names: Lars
+    orcid: https://orcid.org/0000-0002-9562-5235
+  - family-names: Li
+    given-names: Fang
+  - family-names: Chen
+    given-names: Yang
+    orcid: https://orcid.org/0000-0002-0993-7081
+  - family-names: Randerson
+    given-names: Jim
+    orcid: https://orcid.org/0000-0001-6559-7387
+  - family-names: Reyer
+    given-names: Christopher
+    orcid: https://orcid.org/0000-0003-1067-1492
+  - family-names: Mengel
+    given-names: Matthias
+    orcid: https://orcid.org/0000-0001-6724-9685
+title: "Global burned area increasingly explained by climate change"
+doi: 10.5281/zenodo.8143762
 version: v1.0
 date-released: 2023-07-13
+url: "https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change"
             
