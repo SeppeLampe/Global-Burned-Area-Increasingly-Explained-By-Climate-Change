@@ -13,6 +13,7 @@ Full author list: Chantelle Burton<sup>1</sup> and Seppe Lampe<sup>1</sup> <sup>
 <a name="contact"><sup>2</sup></a> Corresponding authour: seppe.lampe@vub.be
 
 Article under review.
+[Preprint available.](https://doi.org/10.21203/rs.3.rs-3168150/v1)
 
 ## Code availability 
 
