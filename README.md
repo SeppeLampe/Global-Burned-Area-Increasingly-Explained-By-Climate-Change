@@ -10,7 +10,7 @@ Full author list: Chantelle Burton<sup>1</sup> and Seppe Lampe<sup>1</sup> <sup>
 
 <a name="contribution"><sup>1</sup></a> Equal contribution
 
-<a name="contact"><sup>2</sup></a> Corresponding authour: seppe.lampe@vub.be
+<a name="contact"><sup>2</sup></a> Corresponding author: seppe.lampe@vub.be
 
 Article under review.
 [Preprint available.](https://doi.org/10.21203/rs.3.rs-3168150/v1)
