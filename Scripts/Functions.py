@@ -10,7 +10,7 @@ from iris import cube
 from iris import coord_categorisation
 import cf_units
 
-from Global_Variables import SUPPLEMENTARY_DATA_PATH
+from Global_Variables import SUPPLEMENTARY_DATA_PATH, SEED
 
 land_fractions = os.path.join(SUPPLEMENTARY_DATA_PATH, 'Land Fractions')
 
@@ -262,3 +262,6 @@ def NME3_temporal(obs_df, model_df):
     
     return numerator.sum()/denominator.sum()    
 
+
+def create_rng(seed):
+    return np.random.default_rng(seed)

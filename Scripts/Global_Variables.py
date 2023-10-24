@@ -1,5 +1,6 @@
 import os
 import numpy as np
+from scipy.signal import convolve2d
 import iris
 import regionmask
 
@@ -58,3 +59,12 @@ del AR6_masks['GIC']
 for mask in AR6_masks.values():
     mask.coords('latitude')[0].guess_bounds()
     mask.coords('longitude')[0].guess_bounds()
+    
+# Create an array with the borders of the AR6 regions. The borders will be np.nan, the remaining pixels will have a value of 0.
+AR6_region_borders = np.zeros((360, 720))
+for region_mask in AR6_masks.values():
+    region_mask = ~region_mask.data
+    convolved = convolve2d(region_mask, np.ones((3, 3)), 'same')//9
+    regionborder = region_mask != convolved
+    AR6_region_borders += regionborder
+AR6_region_borders = np.where(AR6_region_borders, np.nan, 0)
