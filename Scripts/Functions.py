@@ -1,4 +1,5 @@
 import os
+import math
 import numpy as np
 import pandas as pd
 import xarray as xr
@@ -91,6 +92,10 @@ def add_year_coord(cube):
     return cube
 
 
+def add_global(df):
+    df_global = df.T.groupby(level=1, sort=False, dropna=True, observed=True).sum(min_count=1).T
+    df_global.columns = pd.MultiIndex.from_product([pd.CategoricalIndex(['Global'], categories=df.columns.levels[0].categories), df_global.columns], names=df.columns.names)
+    return df.join(df_global)
 
 def prepare_for_facetgrid(df):
     return df.melt(ignore_index=False).reset_index().rename(columns={'value': 'BA'})
@@ -111,8 +116,18 @@ def select_region(df, regionname):
 def to_anomaly(df):
     return df - df.mean()
 
-def to_relative_anomaly(df):
-    return (df - df.mean())/df.mean()
+def relative_anomaly(df, df2=None):
+    df2 = df if df2 is None else df2
+    return (df - df2.mean())/df2.mean()
+
+
+def weighted_avg_and_stddev(df, weights):
+    weighted_average = (df*weights.values).T.groupby(level='Region', sort=False).sum().T
+    variance = df.subtract(weighted_average, axis=0)**2
+    weighted_variance = variance*weights
+    weighted_stddev = np.sqrt(weighted_variance.T.groupby(level='Region', sort=False).sum().T)
+    return weighted_average, weighted_stddev
+
 
 def to_global(df):
     if 'Observation' in df.columns.names:
@@ -121,7 +136,9 @@ def to_global(df):
         level = 'Model'
     else:
         raise ValueError("Observation or Model should be in the column level names (df.column.names)")
-    return df.groupby(level=level, axis=1).sum(min_count=1)
+    if 'Global' in df.columns.unique('Region'):
+        return df.loc[slice(None), ]
+    return df.T.groupby(level=level, observed=True).sum(min_count=1).T
 
 
 
@@ -159,8 +176,7 @@ def to_annual(obj, sum_or_mean='sum'):
         else:
             raise ValueError('sum_or_mean should be "sum" or "mean".')  
     raise TypeError('This function expects "cube_or_df" to be an iris Cube or a pandas DataFrame.')      
-    
-    
+
     
     
 def mask_region(cube, region_mask):
@@ -262,6 +278,45 @@ def NME3_temporal(obs_df, model_df):
     
     return numerator.sum()/denominator.sum()    
 
-
 def create_rng(seed):
     return np.random.default_rng(seed)
+
+
+def log_transform(df):
+    return np.log(df+1+1/df.columns.size)
+
+def log_transform_series(series):
+    return np.log(df+1+1/df.columns.size)
+
+def log_inverse(df):
+    return np.exp(df) - 1
+
+
+def add_error(df, seed, error):
+    return log_inverse(
+                log_transform(df) +
+                pd.DataFrame(create_rng(seed).normal(loc=0, scale=error*np.sqrt(math.pi/2), size=df.shape), df.index, df.columns))
+
+
+def get_results(df, num_resamples, other_mean=False):
+    series = df.sample(n=num_resamples, replace=True, weights='weights', random_state=create_rng(SEED))['RA']
+    results = series.quantile(q=[0.025, 0.5, 0.975])
+    if not other_mean:
+        other_mean = series.mean()
+        results['mean'] = other_mean
+    results['fraction'] = (series>other_mean).mean()
+    return results
+
+
+def get_results_global(df, num_resamples, quantiles=[]):
+    series = df.sample(n=num_resamples, replace=True, weights='weights', random_state=create_rng(SEED))['RA']
+    if not any(quantiles):
+        quantiles = series.quantile(q=np.round(np.arange(0.1, 1, 0.1), 1))
+        quantiles = quantiles.reset_index().rename(columns={'index': 'Quantile'}).set_index('Quantile')
+    for quantile in quantiles.index:
+        quantiles.loc[quantile, 'fraction'] = (series>quantiles.loc[quantile, 'RA']).mean()
+    return quantiles
+
+def scale_values_fig_2(array):
+    return np.where(array>1, array-1, (1/-array)+1)
+

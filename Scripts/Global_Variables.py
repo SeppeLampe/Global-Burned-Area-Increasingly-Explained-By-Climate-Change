@@ -5,6 +5,8 @@ import iris
 import regionmask
 
 BASE_PATH = os.path.dirname(os.getcwd()) # Get the parent directory of the directory where this file is located
+while len(list(os.scandir(BASE_PATH))) == 1: # Sometimes it goes up one folder too much or so, idk why
+    BASE_PATH = os.path.join(BASE_PATH, list(os.scandir(BASE_PATH))[0].name)
 
 DATA_PATH = os.path.join(BASE_PATH, 'Data', "")
 OBSERVATIONS_PATH = os.path.join(DATA_PATH, 'Observations', "")
@@ -16,7 +18,7 @@ FIGURES_PATH = os.path.join(BASE_PATH, 'Visuals', 'Figures', "")
 TABLES_PATH = os.path.join(BASE_PATH, 'Visuals', 'Tables', "")
 
 
-SEED = int.from_bytes("They're taking the hobbits to Isengard!".encode('utf-8')) # Create a seed, which we can use to make our 'random' results repeatable.
+SEED = int(int.from_bytes("They're taking the hobbits to Isengard!".encode('utf-8'), byteorder='big')%(2**32-1)) # Create a seed, which we can use to make our 'random' results repeatable.
 
 
 obs_dict = {}
