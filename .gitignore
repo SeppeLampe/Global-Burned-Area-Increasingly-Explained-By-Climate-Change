@@ -1,0 +1,13 @@
+# ignore .nc files in ANY directory named ISIMIP
+**/ISIMIP/**/*.nc
+
+# ignore .nc files in ANY directory named Original
+**/Original/*.nc
+
+# ignore .ipynb_checkpoints in ANY directory
+Scripts/.ipynb_checkpoints/
+
+# ignore __pycache__ in ANY directory
+Scripts/__pycache__/
+
+Results/fraction_correct.pkl

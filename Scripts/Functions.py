@@ -137,7 +137,7 @@ def to_global(df):
     else:
         raise ValueError("Observation or Model should be in the column level names (df.column.names)")
     if 'Global' in df.columns.unique('Region'):
-        return df.loc[slice(None), ]
+        return df.loc[slice(None), 'Global']
     return df.T.groupby(level=level, observed=True).sum(min_count=1).T
 
 
@@ -283,20 +283,23 @@ def create_rng(seed):
 
 
 def log_transform(df):
-    return np.log(df+1+1/df.columns.size)
-
-def log_transform_series(series):
-    return np.log(df+1+1/df.columns.size)
+    return np.log(df+1+1/df.index.size)
 
 def log_inverse(df):
-    return np.exp(df) - 1
+    return np.exp(df) -1 -1/df.index.size
 
 
 def add_error(df, seed, error):
-    return log_inverse(
-                log_transform(df) +
-                pd.DataFrame(create_rng(seed).normal(loc=0, scale=error*np.sqrt(math.pi/2), size=df.shape), df.index, df.columns))
+    error_repeated = pd.concat([error]*int(df.shape[0]/error.shape[0]))
+    error_matrix = pd.DataFrame(create_rng(seed).normal(loc=0, scale=error_repeated*np.sqrt(math.pi/2), size=df.shape), df.index, df.columns) #
+    return log_inverse(log_transform(df) + error_matrix)
+'''
 
+def add_error(df, seed, error):
+    error_repeated = pd.concat([error]*int(df.shape[0]/error.shape[0]))
+    error_matrix = pd.DataFrame(create_rng(seed).normal(loc=0, scale=error_repeated*np.sqrt(math.pi/2), size=df.shape), df.index, df.columns)
+    return (df + error_matrix).where(lambda val: val>-1, other=-1)
+'''
 
 def get_results(df, num_resamples, other_mean=False):
     series = df.sample(n=num_resamples, replace=True, weights='weights', random_state=create_rng(SEED))['RA']
