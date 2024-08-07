@@ -1,5 +1,5 @@
 # Global Burned Area Increasingly Explained By Climate Change
-[![DOI](https://zenodo.org/badge/523362728.svg)](https://zenodo.org/badge/latestdoi/523362728)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8143761.svg)](https://doi.org/10.5281/zenodo.8143761)
 <img align="right" src="https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change/assets/56223069/38ac7a74-f439-4c70-bb12-a4dfa1798a18" width="200" />
 
 Python code accompanying ISIMIP3a burned area attribution. (updated August 2024)
