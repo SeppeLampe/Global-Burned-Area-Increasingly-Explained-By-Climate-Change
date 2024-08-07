@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/523362728.svg)](https://zenodo.org/badge/latestdoi/523362728)
 <img align="right" src="https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change/assets/56223069/38ac7a74-f439-4c70-bb12-a4dfa1798a18" width="200" />
 
-Python code accompanying ISIMIP3a burned area attribution. (updated January 2024)
+Python code accompanying ISIMIP3a burned area attribution. (updated August 2024)
 
 Chantelle Burton & Seppe Lampe
 
@@ -19,11 +19,8 @@ Article under review.
 
 This repository contains [5 notebooks](https://github.com/SeppeLampe/Global-Burned-Area-Increasingly-Explained-By-Climate-Change/tree/5feeb0b8eb55d232c65a01a4d8803d4cb00d705d/Scripts) that contain the entire workflow of our analysis.
 
-__Important message!__<br>
-Currently, not all the simulations used in this analysis are openly available yet. All of them will be openly available in the coming months.
 We make use of two observational burned area datasets, [FireCCI5.1](https://dx.doi.org/10.5285/58f00d8814064b79a0c49662ad3af537) and [GFED5](https://doi.org/10.5194/essd-2023-182).
 We also use simulations by seven models of the ISIMIP framework. 
-However, from these seven models, two are currently available from the [ISIMIP data repository](https://data.isimip.org/). The other five will become available during the coming weeks/months.
 
 ### How to run this code
 
@@ -35,7 +32,7 @@ However, from these seven models, two are currently available from the [ISIMIP d
 
    Download the [FireCCI5.1](https://data.ceda.ac.uk/neodc/esacci/fire/data/burned_area/MODIS/grid/v5.1) filestructure to [Data\Observations\FireCCI5.1\Original](Data\Observations\FireCCI5.1\Original).<br>
    Download the [GFED5](https://doi.org/10.5281/zenodo.7668424) filestructure to [Data\Observations\GFED5\Original](Data\Observations\GFED5\Original).<br>
-   Download the [ISIMIP Fire Sector](https://data.isimip.org/) OutputData to [Data\ISIMIP\OutputData\fire](Data\ISIMIP\OutputData\fire) (__Not fully available yet__).<br>
+   Download the [ISIMIP3a Fire Sector](https://doi.org/10.48364/ISIMIP.446106) OutputData to [Data\ISIMIP\OutputData\fire](Data\ISIMIP\OutputData\fire).<br>
 
 4. Create a new conda environment
    ```
